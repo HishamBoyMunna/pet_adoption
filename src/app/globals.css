@@ -1,24 +1,161 @@
 @import "tailwindcss";
 
+@theme {
+  --color-paper: #fbf3e4;
+  --color-paper-deep: #f2e2c8;
+  --color-cream: #fffaf0;
+  --color-ink: #322a25;
+  --color-ink-soft: #6f6055;
+  --color-coral: #dd6446;
+  --color-coral-deep: #b94a2f;
+  --color-honey: #f0b64c;
+  --color-sage: #7d9b74;
+  --color-sky: #8db7cc;
+
+  --shadow-sticker: 4px 4px 0 0 var(--color-ink);
+  --shadow-sticker-sm: 2px 2px 0 0 var(--color-ink);
+}
+
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-nunito), ui-rounded, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-hand: var(--font-caveat), "Segoe Print", cursive;
 }
 
-:root {
-  --background: #faf9f7;
-  --foreground: #1c1917;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0c0a09;
-    --foreground: #fafaf9;
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    background-image:
+      radial-gradient(circle at 15% -5%, rgb(240 182 76 / 0.22), transparent 45%),
+      radial-gradient(circle at 85% 0%, rgb(221 100 70 / 0.12), transparent 40%),
+      radial-gradient(rgb(50 42 37 / 0.055) 1px, transparent 1.6px);
+    background-size: auto, auto, 26px 26px;
+    background-attachment: fixed;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background: var(--color-honey);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-coral);
+    outline-offset: 3px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+@layer components {
+  /* Rectangular sticker button with a printed offset shadow — deliberately not a pill. */
+  .btn-sticker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 2px solid var(--color-ink);
+    border-radius: 12px;
+    background: var(--color-cream);
+    color: var(--color-ink);
+    padding: 0.7rem 1.15rem;
+    font-weight: 800;
+    line-height: 1.2;
+    box-shadow: 4px 4px 0 0 var(--color-ink);
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease,
+      background-color 150ms ease;
+  }
+
+  .btn-sticker:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 var(--color-ink);
+  }
+
+  .btn-sticker:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 0 var(--color-ink);
+  }
+
+  .btn-sticker--coral {
+    background: var(--color-coral);
+    color: var(--color-cream);
+  }
+
+  .btn-sticker--coral:hover {
+    background: var(--color-coral-deep);
+  }
+
+  .btn-sticker--sage {
+    background: var(--color-sage);
+    color: var(--color-cream);
+  }
+
+  .btn-sticker--sm {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.8125rem;
+    border-radius: 9px;
+    box-shadow: 2px 2px 0 0 var(--color-ink);
+  }
+
+  .btn-sticker--sm:hover {
+    box-shadow: 1px 1px 0 0 var(--color-ink);
+  }
+
+  /* A strip of masking tape pinning a polaroid to the wall. */
+  .tape {
+    position: absolute;
+    top: -0.7rem;
+    left: 50%;
+    z-index: 2;
+    width: 5.25rem;
+    height: 1.35rem;
+    translate: -50% 0;
+    rotate: -2.5deg;
+    background: rgb(240 182 76 / 0.72);
+    border-inline: 1px dashed rgb(50 42 37 / 0.18);
+    clip-path: polygon(0 12%, 100% 0, 98% 88%, 2% 100%);
+    box-shadow: 0 2px 3px rgb(50 42 37 / 0.08);
+  }
+
+  .wall-card {
+    transition:
+      transform 200ms ease,
+      box-shadow 200ms ease;
+  }
+
+  .wall-card:hover {
+    transform: translateY(-4px) rotate(0deg);
+    box-shadow: 7px 7px 0 0 var(--color-ink);
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

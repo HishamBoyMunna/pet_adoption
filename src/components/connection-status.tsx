@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { PawPrint } from "@/components/icons";
 
 function subscribe(cb: () => void) {
   window.addEventListener("online", cb);
@@ -23,9 +24,10 @@ export function ConnectionStatus() {
   return (
     <div
       role="status"
-      className="sticky top-0 z-50 bg-amber-300 px-4 py-2 text-center text-sm font-medium text-amber-950"
+      className="border-b-2 border-ink bg-honey px-4 py-2 text-center text-sm font-bold text-ink"
     >
-      You are offline. Showing pets you have already visited.
+      <PawPrint className="mr-1.5 inline-block size-3.5" />
+      You&apos;re offline. Showing the pages you&apos;ve already sniffed out.
     </div>
   );
 }

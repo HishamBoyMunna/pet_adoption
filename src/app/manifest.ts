@@ -11,8 +11,8 @@ export default function manifest(): MetadataRoute.Manifest {
     scope: "/",
     display: "standalone",
     orientation: "portrait",
-    background_color: "#1d4a41",
-    theme_color: "#1d4a41",
+    background_color: "#fbf3e4",
+    theme_color: "#fbf3e4",
     categories: ["lifestyle", "shopping", "social"],
     icons: [
       {
@@ -36,9 +36,14 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
     shortcuts: [
       {
-        name: "All pets",
-        short_name: "Browse",
+        name: "The wall",
+        short_name: "Wall",
         url: "/",
+      },
+      {
+        name: "The feed",
+        short_name: "Feed",
+        url: "/feed",
       },
     ],
   };

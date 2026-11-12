@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useSyncExternalStore } from "react";
+import { PawPrint } from "@/components/icons";
 
 type BeforeInstallPromptEvent = Event & {
   prompt: () => Promise<void>;
@@ -38,14 +39,16 @@ export function InstallPrompt() {
   return (
     <button
       type="button"
-      className="rounded-full bg-white/15 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/25"
+      aria-label="Install Paw Haven"
+      className="btn-sticker btn-sticker--sm min-h-10 sm:min-h-0"
       onClick={async () => {
         await deferred.prompt();
         await deferred.userChoice;
         setDeferred(null);
       }}
     >
-      Install app
+      <PawPrint className="size-3.5" />
+      <span className="hidden sm:inline">Install app</span>
     </button>
   );
 }

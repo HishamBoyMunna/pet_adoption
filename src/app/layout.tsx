@@ -1,15 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Caveat, Fraunces, Nunito } from "next/font/google";
 import { ServiceWorkerRegistration } from "@/components/service-worker-registration";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const nunito = Nunito({
+  variable: "--font-nunito",
+  subsets: ["latin"],
+});
+
+const caveat = Caveat({
+  variable: "--font-caveat",
   subsets: ["latin"],
 });
 
@@ -26,7 +31,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     title: "Paw Haven",
-    statusBarStyle: "black-translucent",
+    statusBarStyle: "default",
   },
   formatDetection: { telephone: false },
   openGraph: {
@@ -52,19 +57,16 @@ export const metadata: Metadata = {
 // `themeColor` lives in `viewport`, not `metadata` — it was split out in Next 14
 // and `metadata.themeColor` is now a deprecated no-op.
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f7f5f0" },
-    { media: "(prefers-color-scheme: dark)", color: "#14201d" },
-  ],
+  themeColor: "#fbf3e4",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${nunito.variable} ${caveat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="flex min-h-full flex-col">
         <ServiceWorkerRegistration />
         {children}
       </body>

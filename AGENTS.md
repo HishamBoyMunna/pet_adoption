@@ -23,13 +23,24 @@ npm run typecheck  # tsc --noEmit
 
 ## Layout
 
-- `src/app/` — routes: `/`, `/pets/[id]` (SSG via `generateStaticParams`),
-  `/offline`, `manifest.webmanifest`.
-- `src/components/` — UI, including service-worker registration and install prompt.
+- `src/app/` — routes: `/`, `/feed` (snap-scroll one-pet-per-screen
+  view), `/pets/[id]` (SSG via `generateStaticParams`), `/offline`,
+  `manifest.webmanifest`.
+- `src/components/` — UI, including `pet-feed.tsx` (client feed with
+  scroll-snap, keyboard nav, boop/share actions), service-worker registration
+  and install prompt.
 - `src/lib/service-worker.js` — service worker.
 - `src/data/pets.ts` — static pet data.
 - `public/` — icons, pet images.
 - `next.config.ts` — security headers and service-worker cache headers.
+
+## Visual language
+
+Warm paper theme, not a generic SaaS look: cream/ink/coral/honey/sage palette,
+Fraunces (display) + Nunito (body) + Caveat (handwritten notes), 2px ink
+borders, offset "sticker" shadows, masking-tape details. Buttons are
+rectangular with a 12px radius — do not add pill-shaped buttons or bluish
+gradients. No dark mode; the palette is light-only on purpose.
 
 ## Conventions
 
