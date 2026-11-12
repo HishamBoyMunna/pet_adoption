@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" width="480" height="360" role="img" aria-label="Saffron">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e6eff5"/>
+      <stop offset="1" stop-color="#8aa5b8"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="360" fill="url(#g)"/>
+  <circle cx="420" cy="60" r="90" fill="#ffffff" opacity=".16"/>
+  <circle cx="60" cy="320" r="110" fill="#ffffff" opacity=".12"/>
+  
+    <path d="M226 78 q14 -46 28 -46 q14 0 28 46 z" fill="#e8c95c"/>
+    <ellipse cx="240" cy="196" rx="82" ry="88" fill="#4a4a3a"/>
+    <path d="M182 214 q-44 6 -54 42 q34 10 62 -10 z" fill="#4a4a3a" opacity=".65"/>
+    <circle cx="212" cy="168" r="15" fill="#e6eff5" opacity=".9"/>
+    <circle cx="268" cy="168" r="15" fill="#e6eff5" opacity=".9"/>
+    <circle cx="214" cy="170" r="7" fill="#4a4a3a"/>
+    <circle cx="270" cy="170" r="7" fill="#4a4a3a"/>
+    <path d="M240 186 l-13 16 h26 z" fill="#e8c95c"/>
+    <path d="M214 250 q26 14 52 0" stroke="#e6eff5" stroke-width="7" stroke-linecap="round" fill="none" opacity=".7"/>
+  <text x="240" y="336" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#4a4a3a" opacity=".72">Saffron</text>
+</svg>

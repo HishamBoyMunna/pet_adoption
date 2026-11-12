@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" width="480" height="360" role="img" aria-label="Juniper">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbeedb"/>
+      <stop offset="1" stop-color="#d9b98a"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="360" fill="url(#g)"/>
+  <circle cx="420" cy="60" r="90" fill="#ffffff" opacity=".16"/>
+  <circle cx="60" cy="320" r="110" fill="#ffffff" opacity=".12"/>
+  
+    <ellipse cx="203" cy="112" rx="21" ry="56" fill="#4a3826"/>
+    <ellipse cx="277" cy="112" rx="21" ry="56" fill="#4a3826"/>
+    <ellipse cx="203" cy="112" rx="10" ry="40" fill="#fbeedb" opacity=".5"/>
+    <ellipse cx="277" cy="112" rx="10" ry="40" fill="#fbeedb" opacity=".5"/>
+    <ellipse cx="240" cy="196" rx="76" ry="64" fill="#4a3826"/>
+    <circle cx="218" cy="186" r="10" fill="#fbeedb" opacity=".85"/>
+    <circle cx="262" cy="186" r="10" fill="#fbeedb" opacity=".85"/>
+    <path d="M228 216 q12 10 24 0" stroke="#fbeedb" stroke-width="7" stroke-linecap="round" fill="none" opacity=".85"/>
+    <path d="M240 207 l-8 10 h16 z" fill="#fbeedb" opacity=".85"/>
+  <text x="240" y="336" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#4a3826" opacity=".72">Juniper</text>
+</svg>
